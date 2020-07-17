@@ -10,7 +10,14 @@ Consider what the tiles have in common and what they do not:
 
 const PotionTile = (props) => {
   return (
-    null
+  
+    <div key={props.potion.id} className={props.class}>
+      <div onClick={() => props.onClick(props.potion.id)} className="image-wrapper">
+        <img className="image" alt={props.potion.name} src={props.potion.image_url} />
+      </div>
+      {props.children}
+    </div>
+
   )
 }
 
